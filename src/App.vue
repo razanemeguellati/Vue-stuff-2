@@ -3,15 +3,19 @@
   <p> {{ title }} </p>
   <input type="text" ref="refname">
   <button @click="handleref"> show input</button>
+  <Model/>
 </template>
 
+
 <script>
-// the styles are global
-// exporting object : a root component
+import Model from './components/Model.vue'
+
+// exporting object : a root component having ge3 things we need
 export default {
   name: 'App',
   components: {
-    // any extra components we used    
+    // any extra components we used has to be imported and then added in here (export)
+    Model  
   }, 
 
   data(){
@@ -30,7 +34,8 @@ export default {
 }
 </script>
 
-<style>
+
+<style scoped>
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
