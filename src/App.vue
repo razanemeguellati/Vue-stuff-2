@@ -1,20 +1,37 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p> {{ title }} </p>
+  <input type="text" ref="refname">
+  <button @click="handleref"> show input</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// the styles are global
+// exporting object : a root component
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // any extra components we used    
+  }, 
+
+  data(){
+    return {
+      title: 'My first vue app '
+    }
+  },
+
+  methods: {
+    handleref(){
+      // we can use this to change dom elements display (focus is pretty self-explanatory)
+      // and we'll also use them for composition api 
+      this.$refs.refname.focus()
+    }
   }
 }
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
